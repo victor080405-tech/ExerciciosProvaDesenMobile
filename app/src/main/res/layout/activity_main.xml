@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16.dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CALCULADORA DE PERÍMETRO\nÁREA E COMBUSTÍVEL"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlign="center"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/editLarguraA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="LARGURA A"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/editLarguraB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="LARGURA B"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <EditText
+                android:id="@+id/editAlturaA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="ALTURA A"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/editAlturaB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="ALTURA B"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PERÍMETRO:" android:textStyle="bold"/>
+                <TextView android:id="@+id/txtPerimetro" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00000" android:textSize="24sp" android:textStyle="black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ÁREA:" android:textStyle="bold"/>
+                <TextView android:id="@+id/txtArea" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00000" android:textSize="24sp" android:textStyle="black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCalcularArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Area/Perimetro"
+            android:layout_marginTop="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/editTempo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Tempo Gasto"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/editVelocidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Média Velocidade"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+            <EditText
+                android:id="@+id/editMedia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Média Combustível"
+                android:inputType="numberDecimal" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Combustível (Lts):" android:textSize="10sp" android:textStyle="bold"/>
+                <TextView android:id="@+id/txtCombustivel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00000" android:textSize="24sp" android:textStyle="black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCalcularCombustivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular Combustível"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>
