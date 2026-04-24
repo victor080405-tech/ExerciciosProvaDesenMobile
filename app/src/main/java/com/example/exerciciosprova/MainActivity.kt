@@ -1,49 +1,49 @@
-package com.example.exerciciosprova
+package com.example.exerciciosprovadesenmobile
 
-import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val editLarguraA = findViewById<EditText>(R.id.editLarguraA)
-        val editAlturaA = findViewById<EditText>(R.id.editAlturaA)
-        val txtPerimetro = findViewById<TextView>(R.id.txtPerimetro)
-        val txtArea = findViewById<TextView>(R.id.txtArea)
+        val editLarguraB = findViewById<EditText>(R.id.editLarguraB)
+        val textPerimetro = findViewById<TextView>(R.id.textPerimetro)
+        val textArea = findViewById<TextView>(R.id.textArea)
         val btnCalcularArea = findViewById<Button>(R.id.btnCalcularArea)
 
-        val editTempo = findViewById<EditText>(R.id.editTempo)
-        val editVelocidade = findViewById<EditText>(R.id.editVelocidade)
-        val editMedia = findViewById<EditText>(R.id.editMedia)
-        val txtCombustivel = findViewById<TextView>(R.id.txtCombustivel)
+        val editTempoGasto = findViewById<EditText>(R.id.editTempoGasto)
+        val editVelocidadeMedia = findViewById<EditText>(R.id.editVelocidadeMedia)
+        val editMediaConsumo = findViewById<EditText>(R.id.editMediaConsumo)
+        val textCombustivelUsado = findViewById<TextView>(R.id.textCombustivelUsado)
         val btnCalcularCombustivel = findViewById<Button>(R.id.btnCalcularCombustivel)
 
         btnCalcularArea.setOnClickListener {
-            val largura = editLarguraA.text.toString().toDoubleOrNull() ?: 0.0
-            val altura = editAlturaA.text.toString().toDoubleOrNull() ?: 0.0
+            val larguraA = editLarguraA.text.toString().toDoubleOrNull() ?: 0.0
+            val larguraB = editLarguraB.text.toString().toDoubleOrNull() ?: 0.0
 
-            val area = largura * altura
-            val perimetro = 2 * (largura + altura)
+            val area = larguraA * larguraB
+            val perimetro = 2 * (larguraA + larguraB)
 
-            txtArea.text = String.format("%.2f", area)
-            txtPerimetro.text = String.format("%.2f", perimetro)
+            textArea.text = String.format("%.2f", area)
+            textPerimetro.text = String.format("%.2f", perimetro)
         }
 
         btnCalcularCombustivel.setOnClickListener {
-            val tempo = editTempo.text.toString().toDoubleOrNull() ?: 0.0
-            val velocidade = editVelocidade.text.toString().toDoubleOrNull() ?: 0.0
-            val media = editMedia.text.toString().toDoubleOrNull() ?: 1.0
+            val tempo = editTempoGasto.text.toString().toDoubleOrNull() ?: 0.0
+            val velocidade = editVelocidadeMedia.text.toString().toDoubleOrNull() ?: 0.0
+            val mediaKml = editMediaConsumo.text.toString().toDoubleOrNull() ?: 1.0
 
             val distancia = tempo * velocidade
-            val litrosUsados = distancia / media
+            val litrosUsados = distancia / mediaKml
 
-            txtCombustivel.text = String.format("%.2f", litrosUsados)
+            textCombustivelUsado.text = String.format("%.2f", litrosUsados)
         }
     }
 }
